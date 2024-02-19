@@ -1,5 +1,10 @@
 sudo apt install -y git curl dirmngr gpg curl gawk ca-certificates curl
 
+# Hide Ubuntu docks(retirar luncher de apps do canto)
+	gsettings set org.gnome.shell.extensions.dash-to-dock autohide false
+	gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+	gsettings set org.gnome.shell.extensions.dash-to-dock intellihide false
+
 # asdf configs
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
   sed -i -e '$a\. "$HOME/.asdf/asdf.sh"' -e '$a\. "$HOME/.asdf/completions/asdf.bash"' ~/.bashrc
@@ -10,7 +15,7 @@ sudo apt install -y git curl dirmngr gpg curl gawk ca-certificates curl
   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
   sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-  # Add the repository to Apt sources:
+# Add the repository to Apt sources:
   echo \
     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
