@@ -1,5 +1,9 @@
 sudo apt install -y git curl dirmngr gpg curl gawk ca-certificates curl
 
+# vsCode
+	wget "https://go.microsoft.com/fwlink/?LinkID=760868" -O vscode.deb
+	sudo dpkg -i vscode.deb
+	
 # Hide Ubuntu docks(retirar luncher de apps do canto)
 	gsettings set org.gnome.shell.extensions.dash-to-dock autohide false
 	gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
@@ -8,7 +12,6 @@ sudo apt install -y git curl dirmngr gpg curl gawk ca-certificates curl
 # asdf configs
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
   sed -i -e '$a\. "$HOME/.asdf/asdf.sh"' -e '$a\. "$HOME/.asdf/completions/asdf.bash"' ~/.bashrc
-  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
 # Docker Configurations
   sudo install -m 0755 -d /etc/apt/keyrings
