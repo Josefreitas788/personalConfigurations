@@ -30,4 +30,6 @@ sudo apt install -y git curl dirmngr gpg curl gawk ca-certificates curl
   sudo usermod -aG docker $USER
   newgrp docker
  
-
+# Add oh-my-bash
+	bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
+	sed -i '$ a\OSH_THEME="bakke"' file.txt
